@@ -1,11 +1,4 @@
-
-import java.security.InvalidParameterException;
-import java.util.HashSet;
-import java.util.Set;
-
 public abstract class Vehiculo {
-    private static final Set<String> REGISTRO_PLACAS = new HashSet<>();
-
     private String placa;
     private String marca;
     private String modelo;
@@ -14,7 +7,6 @@ public abstract class Vehiculo {
     protected boolean disponible;
 
     public Vehiculo(String placa, String marca, String modelo, double tarifaDiaria) {
-        if (REGISTRO_PLACAS.contains(placa)) throw new InvalidParameterException("Field 'placa' cannot be duplicate");
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
